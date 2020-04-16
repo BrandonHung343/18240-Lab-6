@@ -1,6 +1,6 @@
      .ORG $1500
 A    .DW $1 ; A 
-B    .DW $1 ; B
+B    .DW $80 ; B
 
      .ORG $1000
      LW R1, R0, A ; load in A
@@ -24,7 +24,7 @@ next SRLI R4, R4, $1 ; Shift abs(B) one right
 done SLTI R0, R5, $0; check what the sign is
      BRZ fin
      NOT R3, R3 ; negate 
-     ADDI R3, $1 ; add 1 for 2s comp
+     ADDI R3, R3, $1 ; add 1 for 2s comp
 fin  STOP ; done 
      
      

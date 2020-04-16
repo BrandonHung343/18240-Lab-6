@@ -1,0 +1,43 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+1500 0001  A          .DW     $1      
+1502 0080  B          .DW     $80     
+1000 2840             LW      R1 R0   
+1002 1500                     A       
+1004 2880             LW      R2 R0   
+1006 1502                     B       
+1008 30C0             LI      R3      
+100A 0000                     $0      
+100C C358             SLLI    R5 R3   
+100E 0007                     $7      
+1010 2110             MV      R4 R2   
+1012 21C8             MV      R7 R1   
+1014 C800             BRZ             
+1016 101E                     MULT    
+1018 8110             NOT     R4 R2   
+101A 3120             ADDI    R4 R4   
+101C 0001                     $1      
+101E 3180  MULT       LI      R6      
+1020 0001                     $1      
+1022 9026             AND     R0 R4 R6
+1024 C800             BRZ             
+1026 102A                     NEXT    
+1028 00D9             ADD     R3 R3 R1
+102A E320  NEXT       SRLI    R4 R4   
+102C 0001                     $1      
+102E C3F8             SLLI    R7 R7   
+1030 0001                     $1      
+1032 5220             SLTI    R0 R4   
+1034 0000                     $0      
+1036 C800             BRZ             
+1038 103E                     DONE    
+103A F800             BRA             
+103C 101E                     MULT    
+103E 5228  DONE       SLTI    R0 R5   
+1040 0000                     $0      
+1042 C800             BRZ             
+1044 104C                     FIN     
+1046 80D8             NOT     R3 R3   
+1048 30D8             ADDI    R3 R3   
+104A 0001                     $1      
+104C FE00  FIN        STOP            
