@@ -1,7 +1,7 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
 1500 0080  A          .DW     $80     
-1502 0080  B          .DW     $80     
+1502 0001  B          .DW     $1      
 1000 2840             LW      R1 R0   
 1002 1500                     A       
 1004 2880             LW      R2 R0   
@@ -13,37 +13,67 @@ addr data   label     opcode  operands
 1010 E350             SRLI    R5 R2   
 1012 0007                     $7      
 1014 C800             BRZ             
-1016 101E                     INIT    
+1016 101E                     CHKA    
 1018 8110             NOT     R4 R2   
 101A 3120             ADDI    R4 R4   
 101C 0001                     $1      
-101E 3140  INIT       LI      R5      
-1020 0000                     $0      
-1022 3180  MULT       LI      R6      
-1024 0001                     $1      
-1026 9026             AND     R0 R4 R6
-1028 C800             BRZ             
-102A 102E                     NEXT    
-102C 00DF             ADD     R3 R3 R7
-102E E320  NEXT       SRLI    R4 R4   
-1030 0001                     $1      
-1032 C3F8             SLLI    R7 R7   
-1034 0001                     $1      
-1036 3168             ADDI    R5 R5   
+101E E348  CHKA       SRLI    R5 R1   
+1020 0007                     $7      
+1022 C800             BRZ             
+1024 1032                     INIT    
+1026 81C8             NOT     R7 R1   
+1028 31F8             ADDI    R7 R7   
+102A 0001                     $1      
+102C 3140             LI      R5      
+102E 00FF                     $FF     
+1030 91FD             AND     R7 R7 R5
+1032 3140  INIT       LI      R5      
+1034 0000                     $0      
+1036 3180  MULT       LI      R6      
 1038 0001                     $1      
-103A 5228             SLTI    R0 R5   
-103C 0008                     $8      
-103E C800             BRZ             
-1040 1046                     DONE    
-1042 F800             BRA             
-1044 1022                     MULT    
-1046 E350  DONE       SRLI    R5 R2   
-1048 0007                     $7      
-104A 5228             SLTI    R0 R5   
-104C 0000                     $0      
-104E C800             BRZ             
-1050 1058                     FIN     
-1052 80D8             NOT     R3 R3   
-1054 30D8             ADDI    R3 R3   
-1056 0001                     $1      
-1058 FE00  FIN        STOP            
+103A 9026             AND     R0 R4 R6
+103C C800             BRZ             
+103E 1042                     NEXT    
+1040 00DF             ADD     R3 R3 R7
+1042 E320  NEXT       SRLI    R4 R4   
+1044 0001                     $1      
+1046 C3F8             SLLI    R7 R7   
+1048 0001                     $1      
+104A 3168             ADDI    R5 R5   
+104C 0001                     $1      
+104E 5228             SLTI    R0 R5   
+1050 0008                     $8      
+1052 C800             BRZ             
+1054 105A                     DONE    
+1056 F800             BRA             
+1058 1036                     MULT    
+105A E350  DONE       SRLI    R5 R2   
+105C 0007                     $7      
+105E C800             BRZ             
+1060 1068                     FINA    
+1062 80D8             NOT     R3 R3   
+1064 30D8             ADDI    R3 R3   
+1066 0001                     $1      
+1068 E348  FINA       SRLI    R5 R1   
+106A 0007                     $7      
+106C C800             BRZ             
+106E 1076                     IAM     
+1070 80D8             NOT     R3 R3   
+1072 30D8             ADDI    R3 R3   
+1074 0001                     $1      
+1076 5210  IAM        SLTI    R0 R2   
+1078 0080                     $80     
+107A C800             BRZ             
+107C 1082                     IBM     
+107E F800             BRA             
+1080 1094                     FIN     
+1082 5208  IBM        SLTI    R0 R1   
+1084 0080                     $80     
+1086 C800             BRZ             
+1088 108E                     FLIP    
+108A F800             BRA             
+108C 1094                     FIN     
+108E 80D8  FLIP       NOT     R3 R3   
+1090 30D8             ADDI    R3 R3   
+1092 0001                     $1      
+1094 FE00  FIN        STOP            
