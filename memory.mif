@@ -85,6 +85,6 @@ DEPTH = 1024;          % Memory depth and width are required   %
 1090 : 30D8;
 1092 : 0001;
 1094 : FE00;
-1500 : 0080;
+1500 : 00FF;
 1502 : 0001;
 END;

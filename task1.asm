@@ -1,5 +1,5 @@
      .ORG $1500
-A    .DW $80 ; A 
+A    .DW $FF ; A 
 B    .DW $1 ; B
 
      .ORG $1000
