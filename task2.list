@@ -1,0 +1,208 @@
+addr data   label     opcode  operands
+---- ----  --------   ------  --------
+0106 0001  X          .DW     $1      
+0108 0000  Y          .DW     $0      
+0200 2840  P1         LW      R1 R0   
+0202 0106                     X       
+0204 2880             LW      R2 R0   
+0206 0106                     X       
+0208 30C0             LI      R3      
+020A 0000                     $0      
+020C 2110             MV      R4 R2   
+020E 21C8             MV      R7 R1   
+0210 E350             SRLI    R5 R2   
+0212 0007                     $7      
+0214 C800             BRZ             
+0216 021E                     CHKA1   
+0218 8110             NOT     R4 R2   
+021A 3120             ADDI    R4 R4   
+021C 0001                     $1      
+021E E348  CHKA1      SRLI    R5 R1   
+0220 0007                     $7      
+0222 C800             BRZ             
+0224 0232                     INIT1   
+0226 81C8             NOT     R7 R1   
+0228 31F8             ADDI    R7 R7   
+022A 0001                     $1      
+022C 3140             LI      R5      
+022E 00FF                     $FF     
+0230 91FD             AND     R7 R7 R5
+0232 3140  INIT1      LI      R5      
+0234 0000                     $0      
+0236 3180  MULT1      LI      R6      
+0238 0001                     $1      
+023A 9026             AND     R0 R4 R6
+023C C800             BRZ             
+023E 0242                     NEXT1   
+0240 00DF             ADD     R3 R3 R7
+0242 E320  NEXT1      SRLI    R4 R4   
+0244 0001                     $1      
+0246 C3F8             SLLI    R7 R7   
+0248 0001                     $1      
+024A 3168             ADDI    R5 R5   
+024C 0001                     $1      
+024E 5228             SLTI    R0 R5   
+0250 0008                     $8      
+0252 C800             BRZ             
+0254 025A                     DONE1   
+0256 F800             BRA             
+0258 0236                     MULT1   
+025A E350  DONE1      SRLI    R5 R2   
+025C 0007                     $7      
+025E C800             BRZ             
+0260 0268                     FINA1   
+0262 80D8             NOT     R3 R3   
+0264 30D8             ADDI    R3 R3   
+0266 0001                     $1      
+0268 E348  FINA1      SRLI    R5 R1   
+026A 0007                     $7      
+026C C800             BRZ             
+026E 0276                     FIN1    
+0270 80D8             NOT     R3 R3   
+0272 30D8             ADDI    R3 R3   
+0274 0001                     $1      
+0276 3818  FIN1       SW      R3 R0   
+0278 0104                     $104    
+027A 3140             LI      R5      
+027C 0007                     $7      
+027E 3828             SW      R5 R0   
+0280 0102                     $102    
+0282 3818             SW      R3 R0   
+0284 0100                     $100    
+0286 F800             BRA             
+0288 0400                     P2      
+0400 2840  P2         LW      R1 R0   
+0402 0100                     $100    
+0404 2880             LW      R2 R0   
+0406 0102                     $102    
+0408 30C0             LI      R3      
+040A 0000                     $0      
+040C 2110             MV      R4 R2   
+040E 21C8             MV      R7 R1   
+0410 E350             SRLI    R5 R2   
+0412 0007                     $7      
+0414 C800             BRZ             
+0416 041E                     CHKA2   
+0418 8110             NOT     R4 R2   
+041A 3120             ADDI    R4 R4   
+041C 0001                     $1      
+041E E348  CHKA2      SRLI    R5 R1   
+0420 0007                     $7      
+0422 C800             BRZ             
+0424 0432                     INIT2   
+0426 81C8             NOT     R7 R1   
+0428 31F8             ADDI    R7 R7   
+042A 0001                     $1      
+042C 3140             LI      R5      
+042E 00FF                     $FF     
+0430 91FD             AND     R7 R7 R5
+0432 3140  INIT2      LI      R5      
+0434 0000                     $0      
+0436 3180  MULT2      LI      R6      
+0438 0001                     $1      
+043A 9026             AND     R0 R4 R6
+043C C800             BRZ             
+043E 0442                     NEXT2   
+0440 00DF             ADD     R3 R3 R7
+0442 E320  NEXT2      SRLI    R4 R4   
+0444 0001                     $1      
+0446 C3F8             SLLI    R7 R7   
+0448 0001                     $1      
+044A 3168             ADDI    R5 R5   
+044C 0001                     $1      
+044E 5228             SLTI    R0 R5   
+0450 0008                     $8      
+0452 C800             BRZ             
+0454 045A                     DONE2   
+0456 F800             BRA             
+0458 0436                     MULT2   
+045A E350  DONE2      SRLI    R5 R2   
+045C 0007                     $7      
+045E C800             BRZ             
+0460 0468                     FINA2   
+0462 80D8             NOT     R3 R3   
+0464 30D8             ADDI    R3 R3   
+0466 0001                     $1      
+0468 E348  FINA2      SRLI    R5 R1   
+046A 0007                     $7      
+046C C800             BRZ             
+046E 0476                     FIN2    
+0470 80D8             NOT     R3 R3   
+0472 30D8             ADDI    R3 R3   
+0474 0001                     $1      
+0476 3818  FIN2       SW      R3 R0   
+0478 0100                     $100    
+047A 3140             LI      R5      
+047C 0064                     $64     
+047E 3828             SW      R5 R0   
+0480 0102                     $102    
+0482 F800             BRA             
+0484 0600                     P3      
+0600 2840  P3         LW      R1 R0   
+0602 0106                     X       
+0604 2880             LW      R2 R0   
+0606 0102                     $102    
+0608 30C0             LI      R3      
+060A 0000                     $0      
+060C 2110             MV      R4 R2   
+060E 21C8             MV      R7 R1   
+0610 E350             SRLI    R5 R2   
+0612 0007                     $7      
+0614 C800             BRZ             
+0616 061E                     CHKA3   
+0618 8110             NOT     R4 R2   
+061A 3120             ADDI    R4 R4   
+061C 0001                     $1      
+061E E348  CHKA3      SRLI    R5 R1   
+0620 0007                     $7      
+0622 C800             BRZ             
+0624 0632                     INIT3   
+0626 81C8             NOT     R7 R1   
+0628 31F8             ADDI    R7 R7   
+062A 0001                     $1      
+062C 3140             LI      R5      
+062E 00FF                     $FF     
+0630 91FD             AND     R7 R7 R5
+0632 3140  INIT3      LI      R5      
+0634 0000                     $0      
+0636 3180  MULT3      LI      R6      
+0638 0001                     $1      
+063A 9026             AND     R0 R4 R6
+063C C800             BRZ             
+063E 0642                     NEXT3   
+0640 00DF             ADD     R3 R3 R7
+0642 E320  NEXT3      SRLI    R4 R4   
+0644 0001                     $1      
+0646 C3F8             SLLI    R7 R7   
+0648 0001                     $1      
+064A 3168             ADDI    R5 R5   
+064C 0001                     $1      
+064E 5228             SLTI    R0 R5   
+0650 0008                     $8      
+0652 C800             BRZ             
+0654 065A                     DONE3   
+0656 F800             BRA             
+0658 0636                     MULT3   
+065A E350  DONE3      SRLI    R5 R2   
+065C 0007                     $7      
+065E C800             BRZ             
+0660 0668                     FINA3   
+0662 80D8             NOT     R3 R3   
+0664 30D8             ADDI    R3 R3   
+0666 0001                     $1      
+0668 E348  FINA3      SRLI    R5 R1   
+066A 0007                     $7      
+066C C800             BRZ             
+066E 0676                     FIN3    
+0670 80D8             NOT     R3 R3   
+0672 30D8             ADDI    R3 R3   
+0674 0001                     $1      
+0676 29C0  FIN3       LW      R7 R0   
+0678 0100                     $100    
+067A 01FB             ADD     R7 R7 R3
+067C 3040             LI      R1      
+067E 0002                     $2      
+0680 11F9             SUB     R7 R7 R1
+0682 3838             SW      R7 R0   
+0684 0108                     Y       
+0686 FE00             STOP            

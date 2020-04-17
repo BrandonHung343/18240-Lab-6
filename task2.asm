@@ -1,5 +1,5 @@
      .ORG $106
-X    .DW $80 ; A
+X    .DW $1 ; A
 Y    .DW $0 
 
 
@@ -44,7 +44,7 @@ fin1 SW R3, R0, $104 ; store x^2 at $104
      SW R3, R0, $100 ; store x^2 at 100
      BRA P2; done
 
-     .ORG $250
+     .ORG $400
 P2   LW R1, R0, $100 ; load in x^2
      LW R2, R0, $102 ; load in 7
      LI R3, $0 ; clear register 3 for input
@@ -84,7 +84,7 @@ fin2 SW R3, R0, $100 ; store 7x^2 at $100
      SW R5, R0, $102 ; store -28 at 102
      BRA P3 ; done
 
-     .ORG $300
+     .ORG $600
 P3   LW R1, R0, X ; load in X
      LW R2, R0, $102 ; load in -28
      LI R3, $0 ; clear register 3 for input
@@ -124,3 +124,4 @@ fin3 LW R7, R0, $100 ; load in 7x^2
      LI R1, $2 ; subtract the two
      SUB R7, R7, R1 ; 7x^2 - 28x - 2;
      SW R7, R0, Y ; store at Y
+     STOP
