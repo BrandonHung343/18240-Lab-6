@@ -1,6 +1,6 @@
      .ORG $1500
-A    .DW $FF ; A 
-B    .DW $1 ; B
+A    .DW $80 ; A 
+B    .DW $7F ; B
 
      .ORG $1000
      LW R1, R0, A ; load in A
@@ -41,7 +41,6 @@ iAm  SLTI R0, R2, $80 ; check if first is int min
      BRZ iBm
      BRA fin
 iBm  SLTI R0, R1, $80 ; first was int min, what about second?
-     BRZ flip
      BRA fin
 flip NOT R3, R3 ; negate 
      ADDI R3, R3, $1 ; add 1 for 2s comp

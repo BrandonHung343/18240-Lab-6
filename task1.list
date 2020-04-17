@@ -1,7 +1,7 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
-1500 00FF  A          .DW     $FF     
-1502 0001  B          .DW     $1      
+1500 0080  A          .DW     $80     
+1502 007F  B          .DW     $7F     
 1000 2840             LW      R1 R0   
 1002 1500                     A       
 1004 2880             LW      R2 R0   
@@ -66,14 +66,12 @@ addr data   label     opcode  operands
 107A C800             BRZ             
 107C 1082                     IBM     
 107E F800             BRA             
-1080 1094                     FIN     
+1080 1090                     FIN     
 1082 5208  IBM        SLTI    R0 R1   
 1084 0080                     $80     
-1086 C800             BRZ             
-1088 108E                     FLIP    
-108A F800             BRA             
-108C 1094                     FIN     
-108E 80D8  FLIP       NOT     R3 R3   
-1090 30D8             ADDI    R3 R3   
-1092 0001                     $1      
-1094 FE00  FIN        STOP            
+1086 F800             BRA             
+1088 1090                     FIN     
+108A 80D8  FLIP       NOT     R3 R3   
+108C 30D8             ADDI    R3 R3   
+108E 0001                     $1      
+1090 FE00  FIN        STOP            
