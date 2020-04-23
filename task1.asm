@@ -1,6 +1,6 @@
      .ORG $1500
-A    .DW $80 ; A 
-B    .DW $7F ; B
+A    .DW $7 ; A 
+B    .DW $64 ; B
 
      .ORG $1000
      LW R1, R0, A ; load in A

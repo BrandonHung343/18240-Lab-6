@@ -1,8 +1,8 @@
      .ORG $106
-X    .DW $1 ; A
-Y    .DW $0 
+X    .DW $8 ; A
+Y    .DW $0
 
-
+    
      .ORG $200
 P1   LW R1, R0, X ; load in x
      LW R2, R0, X ; load in x
@@ -38,10 +38,10 @@ finA1 SRLI R5, R1, $7 ; 8 bits, shift 7 for sign.
      BRZ fin1 ; finish
      NOT R3, R3 ; negate 
      ADDI R3, R3, $1 ; add 1 for 2s comp
-fin1 SW R3, R0, $104 ; store x^2 at $104
+fin1 SW R0, R3, $100 ; store x^2 at $104
      LI R5, $7 ; load 7 into r5
-     SW R5, R0, $102 ; store 7 in 102
-     SW R3, R0, $100 ; store x^2 at 100
+     SW R0, R5, $102 ; store 7 in 102
+     ; SW R3, R0, $100 ; store x^2 at 100
      BRA P2; done
 
      .ORG $400
@@ -79,9 +79,9 @@ finA2 SRLI R5, R1, $7 ; 8 bits, shift 7 for sign.
      BRZ fin2
      NOT R3, R3 ; negate 
      ADDI R3, R3, $1 ; add 1 for 2s comp
-fin2 SW R3, R0, $100 ; store 7x^2 at $100
-     LI R5, $64 ; store -28 at 102
-     SW R5, R0, $102 ; store -28 at 102
+fin2 SW R0, R3, $100 ; store 7x^2 at $100
+     LI R5, $E4 ; store -28 at 102
+     SW R0, R5, $102 ; store -28 at 102
      BRA P3 ; done
 
      .ORG $600
@@ -119,9 +119,9 @@ finA3 SRLI R5, R1, $7 ; 8 bits, shift 7 for sign.
      BRZ fin3
      NOT R3, R3 ; negate 
      ADDI R3, R3, $1 ; add 1 for 2s comp
-fin3 LW R7, R0, $100 ; load in 7x^2
-     ADD R7, R7, R3 ; 7x^2 + (-28 x)
+fin3 LW R6, R0, $100 ; load in 7x^2
+     ADD R6, R6, R3 ; 7x^2 + (-28 x)
      LI R1, $2 ; subtract the two
-     SUB R7, R7, R1 ; 7x^2 - 28x - 2;
-     SW R7, R0, Y ; store at Y
+     SUB R6, R6, R1 ; 7x^2 - 28x - 2;
+     SW R0, R7, Y ; store at Y
      STOP

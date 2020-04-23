@@ -1,6 +1,6 @@
 addr data   label     opcode  operands
 ---- ----  --------   ------  --------
-0106 0001  X          .DW     $1      
+0106 0008  X          .DW     $8      
 0108 0000  Y          .DW     $0      
 0200 2840  P1         LW      R1 R0   
 0202 0106                     X       
@@ -61,16 +61,14 @@ addr data   label     opcode  operands
 0270 80D8             NOT     R3 R3   
 0272 30D8             ADDI    R3 R3   
 0274 0001                     $1      
-0276 3818  FIN1       SW      R3 R0   
-0278 0104                     $104    
+0276 3803  FIN1       SW      R0 R3   
+0278 0100                     $100    
 027A 3140             LI      R5      
 027C 0007                     $7      
-027E 3828             SW      R5 R0   
+027E 3805             SW      R0 R5   
 0280 0102                     $102    
-0282 3818             SW      R3 R0   
-0284 0100                     $100    
-0286 F800             BRA             
-0288 0400                     P2      
+0282 F800             BRA             
+0284 0400                     P2      
 0400 2840  P2         LW      R1 R0   
 0402 0100                     $100    
 0404 2880             LW      R2 R0   
@@ -130,11 +128,11 @@ addr data   label     opcode  operands
 0470 80D8             NOT     R3 R3   
 0472 30D8             ADDI    R3 R3   
 0474 0001                     $1      
-0476 3818  FIN2       SW      R3 R0   
+0476 3803  FIN2       SW      R0 R3   
 0478 0100                     $100    
 047A 3140             LI      R5      
-047C 0064                     $64     
-047E 3828             SW      R5 R0   
+047C 00E4                     $E4     
+047E 3805             SW      R0 R5   
 0480 0102                     $102    
 0482 F800             BRA             
 0484 0600                     P3      
@@ -197,12 +195,12 @@ addr data   label     opcode  operands
 0670 80D8             NOT     R3 R3   
 0672 30D8             ADDI    R3 R3   
 0674 0001                     $1      
-0676 29C0  FIN3       LW      R7 R0   
+0676 2980  FIN3       LW      R6 R0   
 0678 0100                     $100    
-067A 01FB             ADD     R7 R7 R3
+067A 01B3             ADD     R6 R6 R3
 067C 3040             LI      R1      
 067E 0002                     $2      
-0680 11F9             SUB     R7 R7 R1
-0682 3838             SW      R7 R0   
+0680 11B1             SUB     R6 R6 R1
+0682 3807             SW      R0 R7   
 0684 0108                     Y       
 0686 FE00             STOP            
