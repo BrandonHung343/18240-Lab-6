@@ -1,0 +1,47 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "MagComp": [
+        "MagComp",
+        "vaLRj",
+        "module"
+    ],
+    "Multiplexer": [
+        "Multiplexer",
+        "UxyT3",
+        "module"
+    ],
+    "mult_test": [
+        "mult_test",
+        "f0cTx",
+        "module"
+    ],
+    "Decoder": [
+        "Decoder",
+        "t8TcA",
+        "module"
+    ],
+    "Memory": [
+        "Memory",
+        "f0K8C",
+        "module"
+    ],
+    "Counter": [
+        "Counter",
+        "Nsh6f",
+        "module"
+    ],
+    "BarrelShiftRegister": [
+        "BarrelShiftRegister",
+        "ts568",
+        "module"
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ]
+}

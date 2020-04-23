@@ -1,0 +1,163 @@
+{
+    "MlibObjs": {},
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "Memory": [
+            "Memory",
+            "f0K8C",
+            "module"
+        ],
+        "MagComp": [
+            "MagComp",
+            "vaLRj",
+            "module"
+        ],
+        "Multiplexer": [
+            "Multiplexer",
+            "UxyT3",
+            "module"
+        ],
+        "Decoder": [
+            "Decoder",
+            "t8TcA",
+            "module"
+        ],
+        "Counter": [
+            "Counter",
+            "Nsh6f",
+            "module"
+        ],
+        "BarrelShiftRegister": [
+            "BarrelShiftRegister",
+            "ts568",
+            "module"
+        ],
+        "mult_test": [
+            "mult_test",
+            "f0cTx",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "PrevCompiledModules": {
+        "Multiplexer": {
+            "UxyT3_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 7812,
+                "mod": "Multiplexer",
+                "mode": 4,
+                "out": "UxyT3_d.o"
+            }
+        },
+        "MagComp": {
+            "vaLRj_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 8427,
+                "mod": "MagComp",
+                "mode": 4,
+                "out": "vaLRj_d.o"
+            }
+        },
+        "BarrelShiftRegister": {
+            "ts568_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 7571,
+                "mod": "BarrelShiftRegister",
+                "mode": 4,
+                "out": "ts568_d.o"
+            }
+        },
+        "Decoder": {
+            "t8TcA_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 7919,
+                "mod": "Decoder",
+                "mode": 4,
+                "out": "t8TcA_d.o"
+            }
+        },
+        "Memory": {
+            "f0K8C_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 9389,
+                "mod": "Memory",
+                "mode": 4,
+                "out": "f0K8C_d.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 29004,
+                "mod": "std",
+                "mode": 4,
+                "out": "reYIK_d.o"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "archive": "archive.20/_235315_archive_1.a",
+                "bytes": 9263,
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "mode": 4
+            }
+        },
+        "Counter": {
+            "Nsh6f_d": {
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 7682,
+                "mod": "Counter",
+                "mode": 4,
+                "out": "Nsh6f_d.o"
+            }
+        },
+        "mult_test": {
+            "f0cTx_d": {
+                "archive": "archive.20/_235315_archive_1.a",
+                "bytes": 32387,
+                "mod": "mult_test",
+                "out": "f0cTx_d.o",
+                "mode": 4
+            }
+        }
+    },
+    "CompileStrategy": "fullobj",
+    "CurCompileModules": [
+        "...MASTER...",
+        "mult_test"
+    ],
+    "PEModules": [],
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 60986
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileStatus": "Successful",
+    "CompileProcesses": [
+        "cgproc.235315.json"
+    ],
+    "stat": {
+        "nMops": 1727
+    },
+    "Misc": {
+        "daidir_abs": "/afs/ece.cmu.edu/usr/bhung/Private/18240-Lab-6/simv.daidir",
+        "cwd": "/afs/ece.cmu.edu/usr/bhung/Private/18240-Lab-6",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/bhung/Private/18240-Lab-6/csrc",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.20"
+    }
+}
